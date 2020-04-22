@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+function validateForm() {
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+    else{
+    	alert("valid e-mail address");
+    }
+}
+</script>
+<style type="text/css">
+	.center{
+		text-align: center;
+		position: relative;
+		top:250px;
+		/*background-color: white;*/
+		width: 50%;
+		margin: 0 auto;
+		height: 300px;
+	}
+	body{
+	background-image: url(image/xx.jpg) ;
+	-webkit-background-size:cover;
+	background-size: cover;
+
+	}
+	strong{
+		font-size: 30px;
+		color: #f0ff0c;
+	}
+</style>
+</head>
+<body>
+<div class="center">
+	<div style="text-align: center; margin: 0 auto;">
+	<form name="myForm" action="" onsubmit="return validateForm();" method="post">
+		<strong>Name:</strong><input type="text" name="name"/>
+		<br>
+		<strong>Email:</strong><input type="text" name="email">
+		<br>
+		<strong>Message:</strong><br>
+		<textarea rows="2" cols="50" name="message">
+		Enter your Message here
+		</textarea>
+		<br>
+	<input type="submit" name="submit">
+	</form>
+	</div>
+</div>
+</body>
+</html>
